@@ -1,154 +1,139 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JavaScript Gyakorlatok</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-    h1 { color: #333; }
-    h2 { color: #555; }
-    section { margin-bottom: 30px; }
-    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; border: 1px solid #ddd; overflow-x: auto; }
-    code { background: #f9f2f4; color: #c7254e; padding: 2px 4px; border-radius: 3px; }
-    button { margin: 5px 0; padding: 6px 12px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; background-color: #f0f0f0; }
-    button:hover { background-color: #ddd; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Portfólió Gyakorlatok</title>
+<style>
+  body { font-family: 'Roboto', Arial, sans-serif; margin: 20px; line-height: 1.6; background:#f4f8ff; color:#222;}
+  header { text-align:center; margin-bottom:30px; }
+  h1 { color: royalblue; margin-bottom:10px; }
+  h2 { color: seagreen; margin-top:20px; }
+  section { background:white; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.05); margin-bottom:20px; }
+  button { margin:5px 0; padding:8px 16px; border-radius:6px; border:none; background-color:orange; color:white; font-weight:bold; cursor:pointer; transition:all 0.2s;}
+  button:hover { background-color: darkorange; transform:translateY(-2px); }
+  p, ul { margin:10px 0; }
+  ul { list-style-type: disc; padding-left:20px; }
+  #counter, #countdown { font-size:1.5rem; font-weight:bold; color:royalblue; }
+  #fruitList li, #personInfo li { padding:4px 0; border-bottom:1px solid #eee; }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>JavaScript Gyakorlatok</h1>
-  <p>A feladatok egymásra épülnek: kezdj az alapokkal, majd haladj a DOM és események felé!</p>
+  <h1>JavaScript Portfólió Gyakorlatok</h1>
+  <p>Gyakorolj interaktív módon!</p>
 </header>
 
 <main>
-  <!-- 1. Összeadás -->
   <section id="exercise1">
     <h2>1. Két szám összeadása</h2>
-    <p>Összeadás 3 + 4 = <strong id="sumResult"></strong></p>
-    <script>
-      function add(a, b) { return a + b; }
-      document.getElementById('sumResult').innerText = add(3,4);
-    </script>
+    <p>3 + 4 = <strong id="sumResult"></strong></p>
+    <script>document.getElementById('sumResult').innerText = 3+4;</script>
   </section>
 
-  <!-- 2. Páros vagy páratlan -->
+
   <section id="exercise2">
     <h2>2. Páros vagy páratlan?</h2>
     <p>4 → <span id="even1"></span>, 5 → <span id="even2"></span></p>
     <script>
-      function isEven(num) { return num % 2 === 0; }
+      function isEven(n){ return n%2===0; }
       document.getElementById('even1').innerText = isEven(4);
       document.getElementById('even2').innerText = isEven(5);
     </script>
   </section>
 
-  <!-- 3. Számláló -->
+ 
   <section id="exercise3">
-    <h2>3. Számláló gombnyomásra</h2>
+    <h2>3. Számláló</h2>
     <button onclick="incrementCounter()">Növelés</button>
     <p id="counter">0</p>
     <script>
       let count = 0;
-      function incrementCounter() {
-        count++;
-        document.getElementById('counter').innerText = count;
-      }
+      function incrementCounter(){ count++; document.getElementById('counter').innerText=count;}
     </script>
   </section>
 
-  <!-- 4. Adat bekérése -->
+  
   <section id="exercise4">
-    <h2>4. Adat bekérése a felhasználótól</h2>
+    <h2>4. Név bekérése</h2>
     <button onclick="askName()">Kérdezd meg a nevét</button>
-    <p id="name"></p>
+    <p id="nameDisplay"></p>
     <script>
-      function askName() {
-        let name = prompt('Mi a neved?');
-        document.getElementById('name').innerText = 'Üdvözöllek, ' + name + '!';
+      function askName(){
+        let name = prompt("Mi a neved?");
+        document.getElementById('nameDisplay').innerText="Üdvözöllek, "+name+"!";
       }
     </script>
   </section>
 
-  <!-- 5. Visszaszámláló -->
+  
   <section id="exercise5">
     <h2>5. Visszaszámláló</h2>
     <button onclick="startCountdown()">Indítsd el</button>
     <p id="countdown">10</p>
     <script>
-      function startCountdown() {
-        let timeLeft = 10;
-        let timer = setInterval(function() {
-          if(timeLeft <= 0) {
-            clearInterval(timer);
-            document.getElementById('countdown').innerText = 'Idő lejárt!';
-          } else {
-            document.getElementById('countdown').innerText = timeLeft;
+      function startCountdown(){
+        let time=10;
+        let interval = setInterval(()=>{
+          document.getElementById('countdown').innerText=time;
+          if(time-- <=0){
+            clearInterval(interval);
+            document.getElementById('countdown').innerText="Idő lejárt!";
           }
-          timeLeft--;
         },1000);
       }
     </script>
   </section>
 
-  <!-- 6. Tömb és lista -->
+  
   <section id="exercise6">
-    <h2>6. Tömb és lista</h2>
+    <h2>6. Gyümölcs lista</h2>
     <ul id="fruitList"></ul>
     <script>
-      let fruits = ['Alma','Banán','Narancs'];
-      fruits.forEach(f => document.getElementById('fruitList').innerHTML += '<li>'+f+'</li>');
+      let fruits=['Alma','Banán','Narancs'];
+      fruits.forEach(f=>document.getElementById('fruitList').innerHTML+=`<li>${f}</li>`);
     </script>
   </section>
 
-  <!-- 7. Tömb szorzása -->
+  
   <section id="exercise7">
-    <h2>7. Tömb elemeinek szorzása</h2>
-    <p>Check console</p>
+    <h2>7. Tömb szorzása</h2>
+    <p>Nézd a konzolt a kimenethez</p>
     <script>
-      function multiplyArray(arr, multiplier) {
-        return arr.map(num => num * multiplier);
-      }
-      let numbers = [1,2,3,4];
-      console.log(multiplyArray(numbers,2));
+      function multiplyArray(arr,m){return arr.map(n=>n*m);}
+      console.log(multiplyArray([1,2,3,4],2));
     </script>
   </section>
 
-  <!-- 8. Objektum -->
+  
   <section id="exercise8">
-    <h2>8. Objektum tulajdonságok megjelenítése</h2>
+    <h2>8. Objektum tulajdonságok</h2>
     <ul id="personInfo"></ul>
     <script>
-      let person = {name:'John', age:30, city:'Budapest'};
-      for(let key in person) {
-        document.getElementById('personInfo').innerHTML += '<li>' + key + ': ' + person[key] + '</li>';
-      }
+      let person={name:'John',age:30,city:'Budapest'};
+      for(let key in person){ document.getElementById('personInfo').innerHTML+=`<li>${key}: ${person[key]}</li>`;}
     </script>
   </section>
 
-  <!-- 9. Háttér váltás -->
+  
   <section id="exercise9">
-    <h2>9. Eseménykezelő kattintásra</h2>
+    <h2>9. Háttér szín váltás</h2>
     <button onclick="changeBg()">Háttér váltás</button>
     <script>
-      function changeBg() {
-        document.body.style.backgroundColor = 'lightcoral';
-      }
+      function changeBg(){document.body.style.backgroundColor='lightcoral';}
     </script>
   </section>
 
-  <!-- 10. setTimeout üzenet -->
+  
   <section id="exercise10">
-    <h2>10. Időzítő üdvözlő üzenet</h2>
-    <p>5 másodperc után üdvözlő üzenet jelenik meg.</p>
+    <h2>10. Üdvözlő üzenet</h2>
+    <p>5 mp után üdvözlő üzenet</p>
     <script>
-      window.onload = function() {
-        setTimeout(function(){ alert('Üdvözöllek az oldalon!'); }, 5000);
-      }
+      window.onload=function(){ setTimeout(()=>{alert('Üdvözöllek az oldalon!');},5000);}
     </script>
   </section>
-
 </main>
+
 </body>
 </html>
