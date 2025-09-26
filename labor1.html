@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólió — Főoldal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background: #f9f9f9;
+        color: #222;
+        display: flex;
+        flex-direction: column;
+      }
+      header, footer {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+      }
+      nav a {
+        text-decoration: none;
+        color: #0077cc;
+        font-weight: bold;
+      }
+      nav a:hover { text-decoration: underline; }
+      main {
+        display: flex;
+        gap: 20px;
+        flex: 1;
+        margin: 20px;
+      }
+      section {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        flex: 3;
+      }
+      aside {
+        background: #f1f1f1;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        flex: 1;
+        height: fit-content;
+      }
+      img.profile {
+        max-width: 200px;
+        border-radius: 50%;
+        display: block;
+        margin-top: 15px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      figure {
+        margin: 0 0 20px 0;
+      }
+      figcaption {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
+      }
+      iframe {
+        width: 100%;
+        height: 315px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Üdvözöllek a portfóliómban!</h1>
+      <nav>
+        <ul>
+          <li><a href="#fooldal">Főoldal</a></li>
+          <li><a href="#rolam">Rólam</a></li>
+          <li><a href="#kepessegek">Képességek</a></li>
+          <li><a href="#projektek">Projektek</a></li>
+          <li><a href="#galeria">Galéria</a></li>
+          <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <aside>
+        <h2>Projekt linkek</h2>
+        <ul>
+          <li><a href="#projektek">Projekt 1</a></li>
+          <li><a href="#projektek">Projekt 2</a></li>
+          <li><a href="#projektek">Projekt 3</a></li>
+        </ul>
+      </aside>
+
+      <section id="rolam">
+        <h1>Rólam</h1>
+        <h2>Bemutatkozás</h2>
+        <p>Szia! A nevem Barth Patrick, és jelenleg webfejlesztést tanulok. Szeretnék
+            modern, letisztult és felhasználóbarát weboldalakat készíteni.</p>
+        <h2>Érdeklődési körök</h2>
+        <p>Szabadidőmben szeretek társasjátékozni, barátokkal túrázni és utazni, 
+            ugyakkor szeretek koncertekre járni és zenét hallgatni.</p>
+        <img src="profilkep.jpg" alt="Profilkép" title="Ez a profilképem" class="profile" />
+      </section>
+
+      <section id="kepessegek">
+        <h2>Képességek</h2>
+        <ul>
+          <li>HTML</li>
+          <li>C++/C#</li>
+          <li>Laravel</li>
+        </ul>
+      </section>
+
+      <section id="projektek">
+        <h2>Projekttáblázat</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Projekt neve</th>
+              <th>Leírás</th>
+              <th>Használt technológiák</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Weboldal készítés</td>
+              <td>Portfólió weboldal készítése</td>
+              <td>HTML, Laravel</td>
+            </tr>
+            <tr>
+              <td>Mobil appok</td>
+              <td>Local market app</td>
+              <td>Kotlin</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="galeria">
+        <h2>Képgaléria</h2>
+        <figure>
+          <img src="projekt1.jpg" alt="Projekt 1" />
+          <figcaption>Weboldal</figcaption>
+        </figure>
+        <figure>
+          <img src="projekt2.jpg" alt="Projekt 2" />
+          <figcaption>Local Market App</figcaption>
+        </figure>
+      </section>
+
+      <section id="video">
+        <h2>Videó bemutató</h2>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Projekt bemutató videó" allowfullscreen></iframe>
+      </section>
+
+      <section id="kapcsolat">
+        <h2>Kapcsolatfelvételi űrlap</h2>
+        <form>
+          <label for="name">Név:</label><br />
+          <input type="text" id="name" name="name" /><br />
+          <label for="email">E-mail:</label><br />
+          <input type="email" id="email" name="email" /><br />
+          <label for="message">Üzenet:</label><br />
+          <textarea id="message" name="message"></textarea><br />
+          <button type="submit">Küldés</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Barth Patrick - Minden jog fenntartva | Elérhetőség: barthpatrick80@gmail.com</p>
+    </footer>
+  </body>
+</html>
