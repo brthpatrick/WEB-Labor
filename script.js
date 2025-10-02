@@ -11,18 +11,18 @@ const fetchCharacters = async () => {
         const characters = data.results;
 
         const list = document.getElementById('characterList');
-        list.innerHTML = ''; // Töröljük az előző tartalmat
+        list.innerHTML = ''; //toroljuk az elozot tartalmat
 
-        // Minden karakter
+        //Minden karakter
         for (const character of characters) {
             const li = document.createElement('li');
             li.innerHTML = `<strong>${character.name}</strong>`;
 
-            // Extra: karakter filmek
+            //Extra: karakter filmek
             if (character.films.length > 0) {
                 const filmList = document.createElement('ul');
                 
-                // Lekérjük az egyes filmek címét
+                //Lekérjük az egyes filmek címét
                 for (const filmURL of character.films) {
                     const filmResponse = await fetch(filmURL);
                     const filmData = await filmResponse.json();
