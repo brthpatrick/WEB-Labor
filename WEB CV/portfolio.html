@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    body {
+      background-color: #121212;
+      color: #f1f1f1;
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    main#app {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    h1, h2 {
+      color: #00bcd4;
+    }
+
+    .profile-card {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      background: #11161d;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      margin-bottom: 24px;
+    }
+
+    .profile-card .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #1f2937;
+    }
+
+    .profile-card .name {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .profile-card .role {
+      margin: 4px 0 8px;
+      color: #9aa4b2;
+    }
+
+    .profile-card .links a {
+      color: #e6e9ef;
+      text-decoration: none;
+    }
+
+    .profile-card .links a:hover {
+      text-decoration: underline;
+    }
+
+    /* CV sections */
+    section.card {
+      background: #11161d;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    section.card h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    /* Chip style */
+    .chip {
+      display: inline-block;
+      margin: 4px 6px 0 0;
+      padding: 6px 10px;
+      border: 1px solid #1f2937;
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .profile-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-card .avatar {
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main id="app">
+
+    <!--Profile Card-->
+    <section class="profile-card">
+      <img class="avatar" src="profilkep.jpg" alt="Profilkép" />
+      <div class="meta">
+        <h1 class="name">Barth Patrick László</h1>
+        <p class="role">Computer Science Student · Software Developer</p>
+        <div class="links">
+          <a href="mailto:barth.partick-laszlo.23@stud.umfst.ro">Email</a> 
+          <a href="https://github.com/brthpatrick">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!--About me-->
+    <section class="card">
+      <h2>--About me--</h2>
+      <p>
+        I am a 27-year-old third-year Computer Science student with a strong passion for programming and software development.
+        I have hands-on experience in backend, web, and mobile app development using Laravel, .NET, C/C++, Java, and Kotlin.
+      </p>
+      <p>
+        I am eager to learn new technologies, explore frameworks, and work on real-world projects with professionals.  
+        I’m enthusiastic, adaptable, and always seeking challenges that help me grow both personally and professionally.
+      </p>
+    </section>
+
+    <!--Experience-->
+    <section class="card">
+      <h2>--Experience--</h2>
+      <h3>WEBAPIX Kft — Web Developer (Erasmus+ project, Budapest)</h3>
+      <p><em>Summer 2024 & 2025</em></p>
+      <ul>
+        <li>Developed web applications using Laravel</li>
+        <li>Collaborated with team members on project tasks</li>
+        <li>Gained practical experience with backend frameworks</li>
+      </ul>
+
+      <h3>Accenture Services SRL — Software Developer Intern</h3>
+      <p><em>Summer 2025, Târgu Mureș, Romania</em></p>
+      <ul>
+        <li>Worked with C# and .NET Framework</li>
+        <li>Assisted in software testing and maintenance</li>
+        <li>Participated in Agile-based development environment</li>
+      </ul>
+    </section>
+
+    <!--Studies-->
+    <section class="card">
+      <h2>--Studies--</h2>
+      <p><strong>George Emil Palade University of Medicine, Pharmacy, Science and Technology of Târgu Mureș</strong><br>
+        <em>Computer Science Student (2023 – jelenleg)</em><br>
+        <a href="https://umfst.ro/en/" target="_blank">umfst.ro</a>
+      </p>
+      <p><strong>Liceul Teoretic Carei</strong><br>
+        <em>High School Diploma, Natural Sciences (2012 – 2016)</em>
+      </p>
+    </section>
+
+    <!--Skills-->
+    <section class="card">
+      <h2>--Skills--</h2>
+      <div>
+        <span class="chip">C</span>
+        <span class="chip">C++</span>
+        <span class="chip">C#</span>
+        <span class="chip">Java</span>
+        <span class="chip">Kotlin</span>
+        <span class="chip">.NET Framework</span>
+        <span class="chip">Laravel</span>
+        <span class="chip">Android Studio</span>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">SQL</span>
+        <span class="chip">MS-SQL</span>
+      </div>
+    </section>
+
+    <!--Contact-->
+    <section class="card">
+      <h2>Contact</h2>
+      <p>📧 Email: <a href="mailto:barth.partick-laszlo.23@stud.umfst.ro">barth.partick-laszlo.23@stud.umfst.ro</a></p>
+      <p>🏙️ City: Târgu Mureș, Románia</p>
+    </section>
+
+  </main>
+</body>
+</html>
